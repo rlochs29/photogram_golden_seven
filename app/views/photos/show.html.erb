@@ -1,0 +1,24 @@
+<h1>Photo Details</h1>
+<p>
+  <%= @caption %>
+</p>
+
+<img src="<%= @image_url%>">
+
+<p><%= time_ago_in_words(@created_at) %></p>
+
+<a href="/photos">
+  Go back
+</a>
+
+<% @all_photos.each do |the_photo| %>
+<div>
+<a href="/photos/<%= the_photo.id%>/edit">
+  Edit
+</a>
+
+<a href="/delete_photo/<%=the_photo.id%>">
+  Delete
+</a>
+</div>
+<%end%>
